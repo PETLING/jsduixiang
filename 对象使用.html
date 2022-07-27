@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			// 事件对象event
+			window.onload = function() {
+				var p = document.getElementById("pl");
+				p.onmousedown = function(event) {
+					var e = event || window.event;
+					var x = e.screenX
+					var y = e.sreenY
+					alert("(screenX,screenY):(" + x + "," + y + ")");
+					var x2 = e.offsetX
+					var y2 = e.offsetY
+					alert("(offsetX,offsetY):(" + x2 + "," + y2 + ")");
+					var x3 = e.clientX
+					var y3 = e.clientY
+					alert("(clientX,clientY):(" + x3 + "," + y3 + ")");
+					var srcObj = e.target || e.scrElement;
+					alert("事件目标为:" + srcObj.id);
+					var typel = e.type;
+					alert("事件类型为:" + typel);
+					var alt = e.altKey;
+					alert("是否触发alt:" + alt);
+					var shift = e.shiftKey;
+					alert("是否触发shift:" + shift);
+				}
+			}
+
+
+			// 数组对象
+			// var array1 = ["苹果", "梨子", "水蜜桃"];
+			// var array2 = new Array("a", "b", "c");
+			// alert("数组1的值:" + array1);
+			// alert("数组1的元素总计:" + array1.length);
+			// alert("数组1的值扩充cde:" + array1.push('c', 'd', 'e'));
+			// array1.push('c', 'd', 'e');
+			// alert("数组1的选定值:" + array1.slice(0, 2));
+			// alert("数组2的值:" + array2);
+			// alert("数组2的元素总计:" + array2.length);
+			// alert("数组2的值:" + array2.join('-'));
+			// alert("数组2的值加上1的值:" + array2.concat(array1));
+			// alert("数组2的值颠倒顺序:" + array2.reverse());
+
+
+			// String对象
+			// var sTr1 = String('"Welcome to this address!" This address!');
+			// var sTr2 = String('"Welcome to that address!" This address!');
+			// var sTr2 = sTr2.toLowerCase();
+			// alert("sTr1的值：" + sTr1);
+			// alert("sTr2中字符串的个数总计：" + sTr1.length);
+			// alert("已变为小写sTr2的值：" + sTr2);
+			// alert("sTr1中字符串的个数总计：" + sTr2.length);
+			// alert("获取sTr1中字符串中位置4的字符：" + sTr1.charAt(4));
+			// alert("获取sTr1中c的位置：" + sTr1.indexOf("c"));
+			// alert("获取sTr1中位置4之后首次出现d的位置：" + sTr1.indexOf("d",4));
+			// alert("sTr1中字符串的前半段：" + sTr1.slice(0, 27));
+			// alert("sTr1中字符串的!的替换："+sTr1.replace("!","."));
+			// alert("sTr1中字符串的小写转换：" + sTr1.toLowerCase());
+			// alert("sTr1中字符串的大写转换：" + sTr1.toUpperCase());
+
+			// Math对象
+			// alert("-20的绝对值:"+Math.abs(-20));
+			// alert("0度的余弦值:"+Math.cos(0));
+			// alert("-1~1.0中0的反余弦值:"+Math.acos(20));
+			// alert("4的平方根:"+Math.sqrt(4));
+			// alert("e的20次方的值:"+Math.exp(20));
+			// alert("20的自然对数:"+Math.log(20));
+			// alert("10和20相比输出最大值:"+Math.max(10,20));
+			// alert("产生0~1.0随机数:"+Math.random());
+			// alert("4.8四舍五入后的值:"+Math.round(4.8));
+			// alert("产生0~6.0随机数一个整数:"+Math.round(Math.random()*6));
+			// alert("4的2次方的值:"+Math.pow(4,2));
+			// alert("大于等于-1.1的最小整数值:"+Math.ceil(-1.1));
+			// alert("小于等于1.1的最大整数值:"+Math.floor(1.1));
+
+			// Date对象
+			// var now=new Date();   创建Date对象
+			var now = new Date();
+			var year = now.getFullYear();
+			var month = now.getMonth();
+			var date = now.getDate();
+			var day = now.getDay();
+			var hour = now.getHours();
+			var minute = now.getMinutes();
+			var second = now.getSeconds();
+			var string = now.toString();
+			// 创建星期数组
+			var week = new Array("星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+			console.log("现在的时间是:" + year + "年" + month + "月" + day + "日" + hour + ":" + minute + ":" + second + " " + week[day] +
+				"<br>");
+				
+		</script>
+	</head>
+	<body>
+		<p id="pl">event 对象<br>event 对象<br>event 对象<br>event 对象<br>event 对象<br>event 对象<br>event 对象<br>event 对象<br>event
+			对象<br>event 对象<br>event 对象<br>event 对象<br>event 对象<br>event 对象<br></p>
+	</body>
+</html>
